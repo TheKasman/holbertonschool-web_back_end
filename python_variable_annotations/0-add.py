@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env/python3
 """Time for annotations!"""
 from typing import Annotated
 
