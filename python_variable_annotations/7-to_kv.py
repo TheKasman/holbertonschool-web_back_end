@@ -3,5 +3,5 @@
 
 
 def to_kv(k: str, v: int | float) -> tuple[str, int | float]:
-    """Ints and floats sum"""
+    """string and int/float to tuple"""
     return (k, v)
