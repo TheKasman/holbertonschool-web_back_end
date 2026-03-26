@@ -4,5 +4,4 @@ import math
 
 def floor(n: float) -> int:
     """Returns the floor of a float"""
-    print(repr(math.floor(n)))
     return math.floor(n)
