@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Question 1 - Q0 and a class"""
+"""Pagination utilities and a server class"""
 
 import csv
 import math
@@ -8,15 +8,14 @@ from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """ returns a tuple of size two containing the start and end indexes"""
+    """returns a tuple of size two containing the start and end indexes"""
     start = (page - 1) * page_size
     end = start + page_size
     return (start, end)
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
-    """
+    """Server class to paginate a database of popular baby names."""
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
