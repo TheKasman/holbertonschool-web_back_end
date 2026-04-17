@@ -14,5 +14,5 @@ if __name__ == "__main__":
     for m in methods:
         print(f"\tmethod {m}: {collection.count_documents({'method': m})}")
 
-    print(f"{collection.count_documents(
-        {'method': 'GET', 'path': '/status'})} status check")
+    filter_status = {'method': 'GET', 'path': '/status'}
+    print(f"{collection.count_documents(filter_status)} status check")
