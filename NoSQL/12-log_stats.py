@@ -3,20 +3,19 @@
 from pymongo import MongoClient
 
 if __name__ == "__main__":
-    client = MongoClient('mongodb://127.0.0.1:27017')
+    client = MongoClient("mongodb://127.0.0.1:27017")
     collection = client.logs.nginx
 
-    print(f"{collection.count_documents({})} logs")
+    print("{} logs".format(collection.count_documents({})))
 
     print("Methods:")
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
     for m in methods:
         count = collection.count_documents({"method": m})
-        print(f"\tmethod {m}: {count}")
+        print("    method {}: {}".format(m, count))
 
     status_count = collection.count_documents(
         {"method": "GET", "path": "/status"}
     )
-
-    print(f"{status_count} status check")
+    print("{} status check".format(status_count))
