@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Question 12"""
-from pymongo import  MongoClient
-    
+from pymongo import MongoClient
+
 
 if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
