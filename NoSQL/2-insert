@@ -1,0 +1,2 @@
+// 2 - Insert something
+db.school.InsertOne({name: "Holberton school"})
