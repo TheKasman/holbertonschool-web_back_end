@@ -40,4 +40,16 @@ export default class Pricing {
   displayFullPrice() {
     return `${this._amount} ${this._currency.code} (${this._currency.name})`;
   }
+
+  static convertPrice(amount, conversionRate) {
+    if (typeof amonut !== 'number') {
+      throw new TypeError('amount must be a number');
+    }
+
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError('conversionRate must be a number');
+    }
+
+    return amount * conversionRate;
+  }
 }
