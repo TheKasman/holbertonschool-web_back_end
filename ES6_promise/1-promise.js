@@ -5,7 +5,7 @@ export default function getResponseFromAPI(success) {
       body: "Success",
     });
   } else {
-    return Promise.reject("The fake API is not working correctly");
+    return Promise.reject(new Error("The fake API is not working currently"));
   }
 }
 
