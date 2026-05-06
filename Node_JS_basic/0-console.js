@@ -1,6 +1,7 @@
 // displays a message that's thrown into this function
-function displayMessage(theInput) {
-  console.log(theInput);
+function displayMessage(message) {
+  console.log(message);
 }
 
 module.exports = displayMessage;
+
