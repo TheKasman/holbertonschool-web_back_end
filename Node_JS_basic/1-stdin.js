@@ -1,4 +1,4 @@
-//interactive and piped mode
+// interactive and piped mode
 console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('data', (data) => {
