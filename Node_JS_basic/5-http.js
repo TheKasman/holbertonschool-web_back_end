@@ -1,6 +1,8 @@
 const http = require('http');
 const countStudents = require('./3-read_file_async');
 
+const dbFile = process.argv[2];
+
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -9,7 +11,7 @@ const app = http.createServer((req, res) => {
   }
 
   if (req.url === '/students') {
-    countStudents('database.csv')
+    countStudents(dbFile)
       .then((output) => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.end(`This is the list of our students\n${output}`);
@@ -21,6 +23,8 @@ const app = http.createServer((req, res) => {
 
     return;
   }
+  res.writeHead(404, { 'Content-Type': 'text/plain' });
+  res.end('Not found');
 });
 
 app.listen(1245);
