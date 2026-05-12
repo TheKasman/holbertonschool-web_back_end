@@ -21,9 +21,6 @@ const app = http.createServer((req, res) => {
 
     return;
   }
-
-  res.writeHead(404, { 'Content-Type': 'text/plain' });
-  res.end('Not found');
 });
 
 app.listen(1245);
