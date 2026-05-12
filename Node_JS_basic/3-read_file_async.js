@@ -30,7 +30,7 @@ function countStudents(fileName) {
 
       for (const field of Object.keys(fields)) {
         console.log(
-          `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`
+          `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`,
         );
       }
 
@@ -40,4 +40,3 @@ function countStudents(fileName) {
 }
 
 module.exports = countStudents;
-
