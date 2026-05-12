@@ -6,11 +6,14 @@ function countStudents(fileName) {
 
   try {
     const data = fs.readFileSync(filePath, 'utf8');
-    const students = data.trim().split('\n').slice(1);
+    const validStudents = data
+      .split('\n')
+      .slice(1)
+      .filter((line) => line.trim() !== '');
 
     const fields = {};
 
-    for (const row of students) {
+    for (const row of validStudents) {
       const [, , , field] = row.split(',');
 
       if (!fields[field]) {
@@ -19,7 +22,7 @@ function countStudents(fileName) {
 
       fields[field].push(row.split(',')[0]);
     }
-    console.log(`Number of students: ${students.length}`);
+    console.log(`Number of students: ${validStudents.length}`);
     for (const structure of Object.keys(fields)) {
       console.log(`Number of students in ${structure}: ${fields[structure].length}. List: ${fields[structure].join(', ')}`);
     }
