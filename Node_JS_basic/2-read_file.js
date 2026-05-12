@@ -20,10 +20,9 @@ function countStudents(fileName) {
       fields[field].push(row.split(',')[0]);
     }
     console.log(`Number of students: ${students.length}`);
-    for (structure in fields) {
-    console.log(`Number of students in ${structure}: ${fields[structure].length}. List: ${fields[structure].join(', ')}`);
+    for (const structure of Object.keys(fields)) {
+      console.log(`Number of students in ${structure}: ${fields[structure].length}. List: ${fields[structure].join(', ')}`);
     }
-
   } catch (err) {
     console.error('Cannot load the database');
   }
