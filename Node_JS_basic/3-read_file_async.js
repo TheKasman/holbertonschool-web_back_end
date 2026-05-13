@@ -15,7 +15,8 @@ function countStudents(fileName) {
 
       const students = lines.slice(1);
 
-      let output = `Number of students: ${students.length}\n`;
+      const outputLines = [];
+      outputLines.push(`Number of students: ${students.length}`);
 
       const fields = {};
 
@@ -29,12 +30,15 @@ function countStudents(fileName) {
       }
 
       for (const field of Object.keys(fields)) {
-        output += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
+        outputLines.push(
+          `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`
+        );
       }
 
-      resolve(output.trim());
+      resolve(outputLines.join('\n'));
     });
   });
 }
 
 module.exports = countStudents;
+
