@@ -32,7 +32,7 @@ function countStudents(fileName) {
         output += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
       }
 
-      resolve(output);
+      resolve(output.trim());
     });
   });
 }
