@@ -14,9 +14,6 @@ function countStudents(fileName) {
         .filter((line) => line.trim() !== '');
 
       const students = lines.slice(1);
-
-      console.log(`Number of students: ${students.length}`);
-
       const fields = {};
 
       for (const row of students) {
@@ -28,13 +25,15 @@ function countStudents(fileName) {
         fields[field].push(firstname);
       }
 
+      const outputLines = [];
+      outputLines.push(`Number of students: ${students.length}`);
       for (const field of Object.keys(fields)) {
-        console.log(
+        outputLines.push(
           `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`,
         );
       }
 
-      resolve();
+      resolve(outputLines.join('\n'));
     });
   });
 }
